@@ -23,3 +23,22 @@ kksh = kek.new(digest_bits=256)
 kksh.update(target.encode("utf-8"))
 
 print(kksh.hexdigest())
+
+import platform as pf
+
+pn = pf.uname()
+pm = pf.machine()
+pp = pf.processor()
+ps = pf.system()
+
+print(pn)
+
+import urllib.request as ur
+
+url = 'https://www.google.com'
+
+res = ur.request.urlopen(url)
+web = res.read()
+
+with open("ul.html", "wb") as fp:
+    fp.write(web)
