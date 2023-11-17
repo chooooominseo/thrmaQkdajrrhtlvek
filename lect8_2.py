@@ -8,7 +8,7 @@ print(pw)
 pw = getpass.getpass("Pass : ")
 print(pw)
 
-#sha256
+# 해시함수
 
 import hashlib
 
@@ -18,10 +18,8 @@ target = "hello"
 
 hl.update(target.encode("utf-8"))
 print(hl.hexdigest())
-
-#keccak256
-#pip install pycryptodome 
-
+"""
+"""
 import Crypto.Hash.keccak as kek
 
 kksh = kek.new(digest_bits=256)
@@ -30,7 +28,9 @@ kksh.update(target.encode("utf-8"))
 print(kksh.digest())
 print(kksh.hexdigest())
 """
-# 입력키 변환
+
+#활용(입력키 변환)
+
 """
 import getpass
 import hashlib
@@ -44,7 +44,6 @@ hl.update(pw.encode("utf-8"))
 print(hl.digest())
 print(hl.hexdigest())
 """
-# 암호 파일 저장
 """
 import hashlib
 import os
@@ -68,7 +67,7 @@ if pwInsert():
 else:
     print("not allow password")
 """
-#시스템정보 확인
+# 시스템 정보
 """
 import platform as pf
 
@@ -95,7 +94,8 @@ with open("ul.html", "wb") as fp:
     fp.write(web)
 
 print(web)
-
+"""
+"""
 import http.client as hc
 
 url = 'www.google.com'
@@ -113,7 +113,8 @@ conn.close()
 
 print(r)
 
-#3
+"""
+"""
 
 import requests 
 
@@ -123,10 +124,10 @@ web = res.content
 
 with open("ulrp.html", "wb") as fp:
 """
-#멀티스레드
 """
-import threading
+# 멀티스레드
 
+import threading
 import time
 
 def counter(str_name):
@@ -140,7 +141,6 @@ for i in range(3) :
 end = time.time()
 print("single end",end - start)
 """
-#멀티스레드 
 """
 import time
 import threading
@@ -165,8 +165,7 @@ end = time.time()
 
 print("multi end",end - start)
 """
-#멀티프로세싱
-"""
+
 import time
 import multiprocessing
 
@@ -192,8 +191,6 @@ if __name__ == "__main__":
 
     print("proc-end",end - start)
 
-#main 실행
-
 def main() :
     print("hello world")
 
@@ -202,5 +199,4 @@ def run() :
 
 if __name__ == "__main__":
     run()
-"""
 # 수정
