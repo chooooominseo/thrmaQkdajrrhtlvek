@@ -6,10 +6,13 @@ import pandas as pd
 
 print(df)
 print("\n----------------------\n")
+
 print(df[1])
 print("\n----------------------\n")
+
 print(df[1][1])
 print("\n----------------------\n")
+
 
 # dictionary
 
@@ -22,14 +25,19 @@ data = {
 idx = ["x축", "y축", "z축"]
 
 fr = pd.DataFrame(data, index=idx)
+
 print(fr)
 print("\n----------------------\n")
+
 print(fr["x"])
 print("\n----------------------\n")
+
 print(fr.x)
 print("\n----------------------\n")
+
 print(fr.iloc[2])
 print("\n----------------------\n")
+
 print(fr.loc["y축"])
 print("\n----------------------\n")
 
@@ -37,6 +45,7 @@ print("\n----------------------\n")
 
 frs = pd.DataFrame(fr,columns=["x", "y", "z", "t"])
 print(frs)
+
 frs["t"] = [60, 120, 180]
 
 frs.loc["t축"] = [100, 200, 300, 400]
@@ -46,13 +55,16 @@ frs.loc["t축"] = [500, 600, 700, 800]
 print(frs)
 
 #행 삭제
+
 frs.drop("x", axis=1, inplace=True)
 print(frs)
 
 # 열 삭제
+
 frs.drop("x축", inplace=True)
 print(frs)
 """
+
 # 컬럼 추가
 
 """dt = [[1,10,100],[2,20,200],[3,30,300]]
@@ -62,23 +74,47 @@ idx = ["x축","y축","z축"]
 df = pd.DataFrame(data=dt,index=idx,columns=col)
 
 print(df)
+
 print(df["x"])
+
+print(df.loc["x축"])
+
+"""
+"""
+dt = [[1,10,100],[2,20,200],[3,30,300]]
+col = ["x","y","z"]
+idx = ["삼성","현대","LG"]
+
+df = pd.DataFrame(data=dt,index=idx,columns=col)
+
+print(df)
+
+print(df["x"])
+
 print(df.loc["x축"])
 
 # 사칙연산
+
 print(df + 1)
+
 print(df.div(100))
+
 print(df / 100)
+
 print(df.mul(100))
 
 # 같은 인덱스끼리 연산
+
 dt2  = [[0],[2],[3]]
 df2 = pd.DataFrame(data=dt2,index=["삼성","현대","LG"],columns=["col2"])
 
 print(df2)
+
 print(df.div(df2))
+
 print(df.div(df2, fill_value=100))
 """
+
 """
 # 멀티 인덱싱
 
@@ -89,7 +125,9 @@ ind = pd.MultiIndex.from_tuples(idx)
 df = pd.DataFrame(dt, columns=['col1', 'col2', 'col3'], index = ind)
 
 print(df.loc["row1"])
+
 print("\n----------------------\n")
+
 print(df.loc[("row2", "val3"), "col1"])
 
 print(df.iloc[0])
@@ -103,14 +141,18 @@ df = pd.DataFrame(data = dt)
 
 print("\n------------------\n")
 print(df[2])
+
 print("\n------------------\n")
 print(df.loc[2])
+
 print("\n------------------\n")
 print(df.loc[3][1])
 
 print(df.head(3))
+
 print(df.tail(3))
 """
+
 """
 #  테스트 파일 생성
 
@@ -122,6 +164,7 @@ print(temp.name())
 
 
 folder = "data/"
+
 if not os.path.isdir(folder):
     os.mkdir(folder)
     
@@ -169,12 +212,15 @@ print("\n------------------\n")
 print(df.sample())
 
 # 인덱스 설정 확인
+
 print(df.index)
 
 print(df.dtypes)
 
 # 출력
+
 print(df.values)
+
 print(df.values[3])
 
 for el in df.values[0] :
@@ -183,14 +229,17 @@ for el in df.values[0] :
 print(df.info())
     
 print(df.isnull())
+
 print(df.isnull().sum())
 
 print(df.name)
+
 print(df.postcode)
+
 print(df.color)
 
-
 print(df["name"])
+
 print(df["color"])
 
 print(df[["name", "id"]])
@@ -199,10 +248,13 @@ post = df[["name", "address", "postcode"]]
 print(post)
 
 print(df.postcode.describe())
+
 print(df.color.describe())
 
 print(df.color.count())
+
 # 각 데이터별 카운팅
+
 print(df.color.value_counts())
 
 temp = df.postcode.sum() / df.name.count()
