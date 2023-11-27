@@ -109,14 +109,17 @@ df2 = df1.copy()
 
 # Nan 제거
 # res = df2.dropna(how="any")
-res = df2.fillna(value="text")
-print(res)
-res = df2.fillna(value="1234")
-print(res)
-
-# res = df2.dropna(how="any", inplace=True)
+# res = df2.fillna(value="text")
+# print(res)
+# res = df2.fillna(value="1234")
 # print(df2)
-print("\n--------------------------\n")
+# print("\n--------------------------\n")
 
+# res = df2.dropna(how="any", inplace=True) -> 삭제한다는 뜻
+# print(res)
+# print("\n--------------------------\n")
+# print(df2)
 
-
+# Nan 데이터 출력
+res = pd.isna(df1)
+print(res)
