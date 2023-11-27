@@ -120,6 +120,21 @@ df2 = df1.copy()
 # print("\n--------------------------\n")
 # print(df2)
 
-# Nan 데이터 출력
+"""# Nan 데이터 출력
 res = pd.isna(df1)
+res = pd.isna(df)
+res = pd.isna(df0)
+res = pd.isna(df2)
 print(res)
+
+# 데이터 종류별 출력
+res = df["연도"].value_counts()
+res = df["지역명"].value_counts()
+res = df["월"].value_counts()
+res = df.월.value_counts()
+print(res)
+
+res = df.groupby(["지역명", "연도", "월"]).sum()
+res = df.groupby(["지역명", "연도", "월"])["분양가"].all("sum")
+res = df.groupby(["지역명", "연도", "월"])["분양가"].agg("sum")
+print(res)"""
