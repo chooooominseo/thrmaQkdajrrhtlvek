@@ -219,6 +219,7 @@ ax[1][1].plot(x, y1)
 
 # plt.show()"""
 
+# Y축 동시 출력
 # 사용 데이터
 x = [1,4,5,8,9]
 
@@ -235,4 +236,21 @@ ax2.set_ylabel("Y2")
 ax2.plot(x, y2)
 
 # y2 = [100,80,60,40,20]
+plt.show()
+
+# 이종 그래프 출력
+
+x = [1,4,5,8,9]
+y1 = [2,3,6,7,10]
+y2 = [2,3,6,7,10]
+
+fig, ax1 = plt.subplots()
+
+ax1.plot(x, y1, "-o", color="C1", label="X-Data")
+ax1.set_xlabel("X")
+ax1.set_ylabel("Ydata")
+
+ax2 = ax1.twinx()
+ax2.bar(x, y2, color="C2",label="Y-Data")
+ax2.set_ylabel("Y2data")
 plt.show()
